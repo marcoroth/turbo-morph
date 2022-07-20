@@ -23,7 +23,9 @@ import * as Turbo from '@hotwired/turbo'
 ```html
 <turbo-stream action="morph" target="body">
   <template>
-    <h1>This is the new body</h1>
+    <body data-updated="true">
+      <h1>This is the new body</h1>
+    </body>
   </template>
 </turbo-stream>
 ```
