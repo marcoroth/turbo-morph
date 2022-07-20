@@ -5,9 +5,7 @@ import { StreamActions } from "@hotwired/turbo"
 function morph() {
   const options = {
     // @ts-ignore
-    childrenOnly: this.hasAttribute("children-only"),
-    onBeforeElUpdated: () => { console.log("before"); return true },
-    onElUpdated: () => { console.log("after") }
+    childrenOnly: this.hasAttribute("children-only")
   }
 
   // @ts-ignore
