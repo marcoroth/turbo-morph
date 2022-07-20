@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>turbo-morph Playground</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module" src="/index.js"></script>
+  </head>
+
+  <body>
+    <div id="simple-morph">
+      I should get replaced
+    </div>
+
+    <div id="morph-with-root-changed" data-attribute-was-morphed="false">
+      I should get replaced
+    </div>
+
+    <div id="morph-only-children">
+      I should get replaced
+    </div>
+
+    <turbo-stream action="morph" target="simple-morph">
+      <template>
+        <div id="simple-morph">
+          I replaced the previous content
+        </div>
+      </template>
+    </turbo-stream>
+
+    <turbo-stream action="morph" target="morph-with-root-changed">
+      <template>
+        <div id="morph-with-root-changed" data-attribute-was-morphed="true">
+          I replaced the previous content and also updated the data attributes on the root element
+        </div>
+      </template>
+    </turbo-stream>
+
+    <turbo-stream action="morph" target="morph-only-children" children-only>
+      <template>
+        I replaced the previous content, but the root element was preserved because the <code>children-only</code> attribute is set.
+      </template>
+    </turbo-stream>
+  </body>
+</html>

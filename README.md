@@ -2,7 +2,7 @@
 
 `turbo-morph` is a [morphdom](https://github.com/patrick-steele-idem/morphdom) integration for [Turbo Streams](https://turbo.hotwired.dev/reference/streams). It provides a new Turbo Stream `morph` action.
 
-Note: Requires Turbo **7.2+**
+**Note:** Requires Turbo **7.2+**
 
 ## Getting Started
 
