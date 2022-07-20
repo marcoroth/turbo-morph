@@ -13,7 +13,7 @@ function morph() {
   // @ts-ignore
   this.targetElements.forEach(element => {
     //  @ts-ignore
-    morphdom(element, options["childrenOnly"] ? this.templateContent : this.templateElement.innerHTML, options)
+    morphdom(element, options.childrenOnly ? this.templateContent : this.templateElement.innerHTML, options)
   })
 }
 
