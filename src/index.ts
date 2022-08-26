@@ -16,6 +16,7 @@ function morph() {
 }
 
 const registerMorph = () => {
+  console.warn(`"registerMorph" is deprecated, please use "intialize" instead.`)
   StreamActions.morph = morph
 }
 
