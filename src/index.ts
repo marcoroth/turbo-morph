@@ -21,18 +21,18 @@ const registerMorph = () => {
   StreamActions.morph = morph
 }
 
-const intialize = (streamActions: TurboStreamActions) => {
+const initialize = (streamActions: TurboStreamActions) => {
   streamActions.morph = morph
 }
 
 export default {
-  intialize,
+  initialize,
   morph,
   registerMorph
 }
 
 export {
-  intialize,
+  initialize,
   morph,
   registerMorph
 }
