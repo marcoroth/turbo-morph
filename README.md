@@ -14,8 +14,8 @@ yarn add turbo-morph
 // application.js
 import * as Turbo from '@hotwired/turbo'
 
-+import { registerMorph } from 'turbo-morph'
-+registerMorph()
++import TurboMorph from 'turbo-morph'
++TurboMorph.initialize(Turbo.StreamActions)
 ```
 
 ## Example

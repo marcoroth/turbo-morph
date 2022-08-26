@@ -1,16 +1,17 @@
 import morphdom from "morphdom"
 
 import { StreamActions } from "@hotwired/turbo"
+import { TurboStreamActions } from "./types"
+import { StreamElement } from "@hotwired/turbo/dist/types/elements/stream_element"
 
-function morph() {
+
+function morph(this: StreamElement) {
   const options = {
-    // @ts-ignore
     childrenOnly: this.hasAttribute("children-only")
   }
 
   // @ts-ignore
   this.targetElements.forEach(element => {
-    //  @ts-ignore
     morphdom(element, options.childrenOnly ? this.templateContent : this.templateElement.innerHTML, options)
   })
 }
@@ -20,7 +21,18 @@ const registerMorph = () => {
   StreamActions.morph = morph
 }
 
+const intialize = (streamActions: TurboStreamActions) => {
+  streamActions.morph = morph
+}
+
+export default {
+  intialize,
+  morph,
+  registerMorph
+}
+
 export {
+  intialize,
   morph,
   registerMorph
 }
