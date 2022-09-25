@@ -16,23 +16,16 @@ function morph(this: StreamElement) {
   })
 }
 
-const registerMorph = () => {
-  console.warn(`"registerMorph" is deprecated, please use "intialize" instead.`)
-  StreamActions.morph = morph
-}
-
 const initialize = (streamActions: TurboStreamActions) => {
   streamActions.morph = morph
 }
 
 export default {
   initialize,
-  morph,
-  registerMorph
+  morph
 }
 
 export {
   initialize,
-  morph,
-  registerMorph
+  morph
 }
