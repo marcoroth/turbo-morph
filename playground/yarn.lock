@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@hotwired/turbo@^7.2.0-beta.1":
-  version "7.2.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.2.0-beta.1.tgz#14950e91f66b589ec529f3bdad8ae67634a41e21"
-  integrity sha512-MyKYxuShVV+i3Z313YtEr8bQkcwrP0tVQQreK1RfJRuljF/3p4/4DZkzhxG8MKHYXuYgtuSs8+MY+VSVGM3pyw==
+"@hotwired/turbo@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.2.0.tgz#4ff90d80fda17e69b04a12bbf0a42f09953504f6"
+  integrity sha512-CYr6N9NfqsjhmZx1xVQ8zYcDo4hTm7sTUpJydbNgMRyG+YfF/9ADIQQ2TtcBdkl2zi/12a3OTWX0UMzNZnAK9w==
 
 esbuild-android-64@0.14.49:
   version "0.14.49"
