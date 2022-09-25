@@ -1,10 +1,31 @@
-# Turbo Morph
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.png">
+    <img src="assets/hero.png" height="340px">
+  </picture>
+</p>
+
+<h1 align="center">Turbo Morph</h1>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/turbo-morph">
+    <img alt="NPM Version" src="https://img.shields.io/npm/v/turbo-morph?logo=npm&color=38C160">
+  </a>
+
+  <a href="https://www.npmjs.com/package/turbo-morph">
+    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/turbo-morph?logo=npm&color=38C160">
+  </a>
+  <a href="https://bundlephobia.com/package/turbo-morph">
+    <img alt="NPM Bundle Size" src="https://img.shields.io/bundlephobia/minzip/turbo-morph?label=bundle%20size&logo=npm">
+  </a>
+</p>
+
+## Getting Started
 
 `turbo-morph` is a [morphdom](https://github.com/patrick-steele-idem/morphdom) integration for [Turbo Streams](https://turbo.hotwired.dev/reference/streams). It provides a new Turbo Stream `morph` action.
 
 **Note:** Requires Turbo **7.2+**
 
-## Getting Started
 
 ```bash
 yarn add turbo-morph
