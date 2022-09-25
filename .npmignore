@@ -6,6 +6,7 @@
 
 *.log
 *.tsbuildinfo
+*~
 
 README.md
 rollup.config.js
@@ -15,7 +16,9 @@ yarn-error.log
 
 /.git
 /.github
+/.gitattributes
 
 /node_modules
 /playground
 /src
+/assets
