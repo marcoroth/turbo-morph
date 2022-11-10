@@ -22,7 +22,20 @@
 
 ## Getting Started
 
-`turbo-morph` is a [morphdom](https://github.com/patrick-steele-idem/morphdom) integration for [Turbo Streams](https://turbo.hotwired.dev/reference/streams). It provides a new Turbo Stream `morph` action.
+`turbo-morph` is a Morph integration for [Turbo Streams](https://turbo.hotwired.dev/reference/streams). It provides a new Turbo Stream `morph` action and a few others action.
+
+
+Supported morph plugins:
+* [`morphdom`(default)](https://github.com/patrick-steele-idem/morphdom)
+* [`@alpinejs/morph`](http://alpinejs.dev/plugins/morph)
+* [`nanomorph`](https://github.com/choojs/nanomorph)
+* [`micromorph`](https://github.com/natemoo-re/micromorph)
+* [`idiomorph`](https://github.com/bigskysoftware/idiomorph)
+* [`diffhtml`](https://github.com/tbranyen/diffhtml)
+* [`diff-dom`](https://github.com/fiduswriter/diffDOM)
+
+
+## Installation
 
 **Note:** Requires Turbo **7.2+**
 
@@ -35,11 +48,43 @@ yarn add turbo-morph
 // application.js
 import * as Turbo from '@hotwired/turbo'
 
+// using morphdom as default
 +import TurboMorph from 'turbo-morph'
 +TurboMorph.initialize(Turbo.StreamActions)
 ```
 
-## Example
+Using a non-default morph plugin:
+
+```diff
+// application.js
+import * as Turbo from '@hotwired/turbo'
+
++import TurboMorph from 'turbo-morph/nanomorph'
++TurboMorph.initialize(Turbo.StreamActions)
+```
+
+Using multiple morph plugins:
+
+```diff
+// application.js
+import * as Turbo from '@hotwired/turbo'
+
+// using nanomorph as default
++import { morph as morphdom } from 'turbo-morph'
++import { morph as nanomorph } from 'turbo-morph/nanomorph'
++import { morph as micromorph } from 'turbo-morph/micromorph'
+
+ // Set the one you want as default
++Turbo.StreamActions.morph = morphdom
+
+// And register the other ones as their own action
++Turbo.StreamActions.morphdom = morphdom
++Turbo.StreamActions.nanomorph = nanomorph
++Turbo.StreamActions.micromorph = micromorph
+```
+
+
+## Example using the default
 
 ```html
 <turbo-stream action="morph" target="body">

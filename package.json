@@ -35,7 +35,13 @@
     "vitest": "^0.18.1"
   },
   "peerDependencies": {
+    "@alpinejs/morph": "^3.10.5",
     "@hotwired/turbo": ">= 7.2",
-    "morphdom": ">= 2.6"
+    "diff-dom": "^4.2.8",
+    "diffhtml": "^1.0.0-beta.29",
+    "idiomorph": "^0.0.7",
+    "micromorph": "^0.3.1",
+    "morphdom": ">= 2.6",
+    "nanomorph": "^5.4.3"
   }
 }
