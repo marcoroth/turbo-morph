@@ -22,7 +22,7 @@
 
 ## Getting Started
 
-`turbo-morph` is a Morph integration for [Turbo Streams](https://turbo.hotwired.dev/reference/streams). It provides a new Turbo Stream `morph` action and a few others action.
+`turbo-morph` is a Morph integration for [Turbo Streams](https://turbo.hotwired.dev/reference/streams). It provides a new Turbo Stream `morph` action which uses `morphdom` under the hood by default.
 
 
 Supported morph plugins:
