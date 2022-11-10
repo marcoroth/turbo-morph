@@ -14,36 +14,58 @@ const minify = () => {
   })
 }
 
+const plugins = [
+  resolve(),
+  typescript(),
+  filesize(),
+  // minify()
+]
+
+const esConfig = {
+  format: 'es'
+}
+
+const umdConfig = {
+  name: 'TurboMorph',
+  format: 'umd',
+  banner,
+  globals: {
+    '@hotwired/turbo': 'Turbo',
+    'morphdom': 'morphdom'
+  }
+}
+
+
 export default [
   {
     input: 'src/index.ts',
     external: [
-      '@hotwired/turbo'
+      '@hotwired/turbo',
+      'morphdom'
     ],
     output: [
-      {
-        name: 'TurboMorph',
-        file: 'dist/index.umd.js',
-        format: 'umd',
-        banner,
-        globals: {
-          '@hotwired/turbo': 'Turbo'
-        }
-      },
-      {
-        file: 'dist/index.js',
-        format: 'es',
-        banner
-      }
+      { ...umdConfig, file: 'dist/index.umd.js' },
+      { ...esConfig, file: 'dist/index.js' }
     ],
-    plugins: [
-      resolve(),
-      typescript(),
-      filesize(),
-      minify()
-    ],
+    plugins,
     watch: {
-      include: 'src/**'
+      include: 'src/index.ts'
     }
-  }
+  },
+  {
+    input: 'src/plugins/alpine.ts',
+    external: [
+      '@hotwired/turbo',
+      'alpinejs',
+      '@alpinejs/morph',
+    ],
+    output: [
+      { ...umdConfig, file: 'dist/alpine.umd.js', globals: { ...umdConfig.globals, 'alpinejs': 'Alpine' } },
+      { ...esConfig, file: 'dist/alpine.js' }
+    ],
+    plugins,
+    watch: {
+      include: 'src/plugins/alpine.ts'
+    }
+  },
 ]

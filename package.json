@@ -10,6 +10,16 @@
   "license": "MIT",
   "repository": "https://github.com/marcoroth/turbo-morph",
   "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.js",
+    "./morphdom": "./dist/index.js",
+    "./alpine": "./dist/alpine.js",
+    "./diff-dom": "./dist/diff-dom.js",
+    "./diffhtml": "./dist/diffhtml.js",
+    "./idiomorph": "./dist/idiomorph.js",
+    "./micromorph": "./dist/micromorph.js",
+    "./nanomorph": "./dist/nanomorph.js"
+  },
   "scripts": {
     "start": "cd playground && yarn start",
     "prebuild": "yarn clean",
@@ -23,6 +33,7 @@
     "@hotwired/turbo": "^7.2.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-typescript": "^8.2.5",
+    "@types/alpinejs": "^3.7.1",
     "concurrently": "^7.3.0",
     "morphdom": "^2.6.1",
     "rimraf": "^3.0.2",
@@ -37,6 +48,7 @@
   "peerDependencies": {
     "@alpinejs/morph": "^3.10.5",
     "@hotwired/turbo": ">= 7.2",
+    "alpinejs": "^3.10.5",
     "diff-dom": "^4.2.8",
     "diffhtml": "^1.0.0-beta.29",
     "idiomorph": "^0.0.7",
