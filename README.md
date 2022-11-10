@@ -59,6 +59,7 @@ Using a non-default morph plugin:
 // application.js
 import * as Turbo from '@hotwired/turbo'
 
+// using nanomorph as default
 +import TurboMorph from 'turbo-morph/nanomorph'
 +TurboMorph.initialize(Turbo.StreamActions)
 ```
@@ -69,7 +70,6 @@ Using multiple morph plugins:
 // application.js
 import * as Turbo from '@hotwired/turbo'
 
-// using nanomorph as default
 +import { morph as morphdom } from 'turbo-morph'
 +import { morph as nanomorph } from 'turbo-morph/nanomorph'
 +import { morph as micromorph } from 'turbo-morph/micromorph'
