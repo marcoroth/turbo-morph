@@ -1,11 +1,12 @@
-import diffhtml from "diffhtml"
+// @ts-ignore
+import { innerHTML } from 'diffhtml'
 import { StreamElement, TurboStreamActions } from "@hotwired/turbo"
 
 export function morph(this: StreamElement) {
-  const _childrenOnly = this.hasAttribute("children-only")
+  // const _childrenOnly = this.hasAttribute("children-only")
 
   this.targetElements.forEach((_element: Element) => {
-    // TODO
+    innerHTML()
   })
 }
 

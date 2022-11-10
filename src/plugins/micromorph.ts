@@ -1,8 +1,9 @@
-import TODO from "micromorph"
+// @ts-ignore
+import micromorph from "micromorph"
 import { StreamElement, TurboStreamActions } from "@hotwired/turbo"
 
 export function morph(this: StreamElement) {
-  const _childrenOnly = this.hasAttribute("children-only")
+  // const _childrenOnly = this.hasAttribute("children-only")
 
   this.targetElements.forEach((_element: Element) => {
     // TODO

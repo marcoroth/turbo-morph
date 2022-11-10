@@ -1,11 +1,14 @@
-import TODO from "nanomorph"
+// @ts-ignore
+import nanomorph from "nanomorph"
+// import nanohtml from "nanohtml"
+
 import { StreamElement, TurboStreamActions } from "@hotwired/turbo"
 
 export function morph(this: StreamElement) {
-  const _childrenOnly = this.hasAttribute("children-only")
+  // const _childrenOnly = this.hasAttribute("children-only")
 
   this.targetElements.forEach((_element: Element) => {
-    // TODO
+    nanomorph()
   })
 }
 
