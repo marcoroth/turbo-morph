@@ -2,8 +2,8 @@
   "name": "turbo-morph",
   "version": "0.1.0",
   "description": "Morphdom integration for Turbo Streams",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
   "unpkg": "dist/index.umd.js",
   "types": "dist/types/index.d.ts",
   "author": "Marco Roth",
@@ -11,14 +11,14 @@
   "repository": "https://github.com/marcoroth/turbo-morph",
   "sideEffects": false,
   "exports": {
-    ".": "./dist/index.js",
-    "./morphdom": "./dist/index.js",
-    "./alpine": "./dist/alpine.js",
-    "./diff-dom": "./dist/diff-dom.js",
-    "./diffhtml": "./dist/diffhtml.js",
-    "./idiomorph": "./dist/idiomorph.js",
-    "./micromorph": "./dist/micromorph.js",
-    "./nanomorph": "./dist/nanomorph.js"
+    ".": "./dist/index.mjs",
+    "./morphdom": "./dist/plugins/morphdom.mjs",
+    "./alpine": "./dist/plugins/alpine.mjs",
+    "./diff-dom": "./dist/plugins/diff-dom.mjs",
+    "./diffhtml": "./dist/plugins/diffhtml.mjs",
+    "./idiomorph": "./dist/plugins/idiomorph.mjs",
+    "./micromorph": "./dist/plugins/micromorph.mjs",
+    "./nanomorph": "./dist/plugins/nanomorph.mjs"
   },
   "scripts": {
     "start": "cd playground && yarn start",

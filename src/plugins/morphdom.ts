@@ -2,12 +2,13 @@ import morphdom from "morphdom"
 import { StreamElement, TurboStreamActions } from "@hotwired/turbo"
 
 export function morph(this: StreamElement) {
-  const options = {
-    childrenOnly: this.hasAttribute("children-only")
-  }
+  console.log("morphdom")
+
+  const childrenOnly = this.hasAttribute("children-only")
+  const newHtml = childrenOnly ? this.templateContent : this.templateElement.innerHTML
 
   this.targetElements.forEach(element => {
-    morphdom(element, options.childrenOnly ? this.templateContent : this.templateElement.innerHTML, options)
+    morphdom(element, newHtml, { childrenOnly })
   })
 }
 

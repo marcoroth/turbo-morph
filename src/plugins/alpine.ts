@@ -19,6 +19,7 @@ if (!window.Alpine.morph) {
 }
 
 export function morph(this: StreamElement) {
+  console.log("alpine")
   const childrenOnly = this.hasAttribute("children-only")
 
   this.targetElements.forEach(element => {

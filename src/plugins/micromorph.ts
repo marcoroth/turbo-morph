@@ -2,11 +2,19 @@
 import micromorph from "micromorph"
 import { StreamElement, TurboStreamActions } from "@hotwired/turbo"
 
-export function morph(this: StreamElement) {
-  // const _childrenOnly = this.hasAttribute("children-only")
+const parser = new DOMParser()
 
-  this.targetElements.forEach((_element: Element) => {
-    // TODO
+export function morph(this: StreamElement) {
+  console.log("micromorph")
+  const childrenOnly = this.hasAttribute("children-only")
+
+  // TODO: check children-only attribute, it currently replaces the whole parent element with the new content
+  const newHtml = childrenOnly
+    ? this.templateContent
+    : parser.parseFromString(this.templateElement.innerHTML, 'text/html').body.children[0]
+
+  this.targetElements.forEach((element: Element) => {
+    micromorph(element, newHtml);
   })
 }
 

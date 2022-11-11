@@ -1,13 +1,13 @@
-import { morph as morphdom, initialize } from "./plugins/morphdom"
+import { morph, initialize } from "./plugins/morphdom"
+
+console.log("morphdom via default")
 
 export default {
   initialize,
-  morph: morphdom,
-  morphdom
+  morph
 }
 
 export {
   initialize,
-  morphdom as morph,
-  morphdom
+  morph,
 }

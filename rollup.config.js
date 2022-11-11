@@ -31,41 +31,57 @@ const umdConfig = {
   banner,
   globals: {
     '@hotwired/turbo': 'Turbo',
-    'morphdom': 'morphdom'
+    'morphdom': 'morphdom',
+    'alpinejs': 'Alpine',
+    '@alpinejs/morph': 'Alpine.morph',
+    'diff-dom': 'DiffDOM',
+    'diffhtml': 'diffhtml',
+    'idiomorph': 'Idiomorph',
+    'nanomorph': 'nanomorph',
+    'nanohtml': 'nanohtml',
+  }
+}
+
+const external = [
+  '@hotwired/turbo',
+  'alpinejs',
+  '@alpinejs/morph',
+  'nanohtml'
+]
+
+const defaultPlugin = {
+  input: 'src/index.ts',
+  output: [
+    { ...umdConfig, file: 'dist/index.umd.js' },
+    { ...esConfig, file: 'dist/index.mjs' },
+  ],
+  plugins,
+  external,
+  watch: { include: 'src/index.ts' }
+}
+
+const exportConfigFor = (plugin) => {
+  external.push(plugin)
+  return {
+    input: `src/plugins/${plugin}.ts`,
+    output: [
+      { ...umdConfig, file: `dist/plugins/${plugin}.umd.js` },
+      { ...esConfig, file: `dist/plugins/${plugin}.mjs` }
+    ],
+    external,
+    plugins,
+    watch: { include: `src/plugins/${plugin}.ts` }
   }
 }
 
 
 export default [
-  {
-    input: 'src/index.ts',
-    external: [
-      '@hotwired/turbo',
-      'morphdom'
-    ],
-    output: [
-      { ...umdConfig, file: 'dist/index.umd.js' },
-      { ...esConfig, file: 'dist/index.js' }
-    ],
-    plugins,
-    watch: {
-      include: 'src/index.ts'
-    }
-  },
-  {
-    input: 'src/plugins/alpine.ts',
-    external: [
-      '@hotwired/turbo',
-      'alpinejs',
-      '@alpinejs/morph',
-    ],
-    output: [
-      { ...umdConfig, file: 'dist/alpine.umd.js', globals: { ...umdConfig.globals, 'alpinejs': 'Alpine' } },
-      { ...esConfig, file: 'dist/alpine.js' }
-    ],
-    plugins,
-    watch: {
-      include: 'src/plugins/alpine.ts'
-    }
-  },
+  defaultPlugin,
+  exportConfigFor('morphdom'),
+  exportConfigFor('alpine'),
+  exportConfigFor('nanomorph'),
+  exportConfigFor('idiomorph'),
+  exportConfigFor('micromorph'),
+  exportConfigFor('diff-dom'),
+  exportConfigFor('diffhtml'),
 ]
