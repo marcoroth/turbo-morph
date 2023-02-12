@@ -9,7 +9,8 @@ export default [
   {
     input: 'src/index.ts',
     external: [
-      '@hotwired/turbo'
+      '@hotwired/turbo',
+      'morphdom'
     ],
     output: [
       {
@@ -18,7 +19,8 @@ export default [
         format: 'umd',
         banner,
         globals: {
-          '@hotwired/turbo': 'Turbo'
+          '@hotwired/turbo': 'Turbo',
+          'morphdom': 'morphdom'
         }
       },
       {
