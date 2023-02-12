@@ -1,6 +1,6 @@
 {
   "name": "turbo-morph",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Morphdom integration for Turbo Streams",
   "main": "dist/turbo-morph.js",
   "module": "dist/turbo-morph.js",
