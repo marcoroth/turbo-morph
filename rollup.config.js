@@ -1,18 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import filesize from 'rollup-plugin-filesize'
-import { terser } from 'rollup-plugin-terser'
 
 import { version } from './package.json'
-const year = new Date().getFullYear()
-const banner = `/*\TurboMorph ${version}\n*/`
-
-const minify = () => {
-  return terser({
-    mangle: true,
-    compress: true
-  })
-}
+const banner = `/*\n * TurboMorph ${version}\n */`
 
 export default [
   {
@@ -39,8 +30,7 @@ export default [
     plugins: [
       resolve(),
       typescript(),
-      filesize(),
-      minify()
+      filesize()
     ],
     watch: {
       include: 'src/**'
