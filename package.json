@@ -24,7 +24,6 @@
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-typescript": "^8.2.5",
     "concurrently": "^7.3.0",
-    "morphdom": "^2.6.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.57.0",
     "rollup-plugin-filesize": "^9.1.1",
