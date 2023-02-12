@@ -15,7 +15,7 @@ export default [
     output: [
       {
         name: 'TurboMorph',
-        file: 'dist/index.umd.js',
+        file: 'dist/turbo-morph.umd.js',
         format: 'umd',
         banner,
         globals: {
@@ -24,7 +24,7 @@ export default [
         }
       },
       {
-        file: 'dist/index.js',
+        file: 'dist/turbo-morph.js',
         format: 'es',
         banner
       }
