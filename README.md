@@ -42,7 +42,7 @@ import * as Turbo from '@hotwired/turbo'
 ## Example
 
 ```html
-<turbo-stream action="morph" target="body">
+<turbo-stream action="morph" targets="body">
   <template>
     <body data-updated="true">
       <h1>This is the new body</h1>
