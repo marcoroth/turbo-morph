@@ -58,7 +58,7 @@ import * as Turbo from '@hotwired/turbo'
 With Turbo Streams you can apply this option by adding the `[children-only]` attribute to your `<turbo-stream>` element.
 
 ```html
-<turbo-stream action="morph" target="body" children-only>
+<turbo-stream action="morph" targets="body" children-only>
   ...
 </turbo-stream>
 ```
