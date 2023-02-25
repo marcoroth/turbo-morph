@@ -65,7 +65,7 @@ With Turbo Streams you can apply this option by adding the `[children-only]` att
 
 ## Usage with Rails
 
-TBD
+The [`turbo_power-rails`](https://github.com/marcoroth/turbo_power-rails) gem ships a Rails helper for using `turbo_stream.morph` in your application. Check out the Getting Started section over there.
 
 
 ## Acknowledgments
